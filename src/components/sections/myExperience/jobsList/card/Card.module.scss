@@ -1,0 +1,116 @@
+@import "../../../../../config";
+
+.card {
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 100%;
+	max-width: 768px;
+
+	.head {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+
+		width: 100%;
+		min-height: 54px;
+		padding: 15px 20px;
+
+		cursor: pointer;
+
+		border-radius: 6px;
+		gap: 40px;
+
+		.jobInfo {
+			display: flex;
+			justify-content: space-between;
+
+			width: 100%;
+
+			span {
+				white-space: nowrap;
+			}
+
+			@media #{$g-ui-mobile-small} {
+				flex-direction: column;
+				.period {
+					font-family: "Open Sans", sans-serif;
+					font-size: 1em;
+				}
+			}
+		}
+
+		.close {
+			position: relative;
+		}
+	}
+
+	.contentWrapper {
+		padding: 20px;
+
+		.content {
+			display: flex;
+			align-content: center;
+			justify-content: space-between;
+
+			width: 100%;
+			padding: 15px;
+
+			border-radius: 6px;
+			background-color: #2C1D5C;
+
+			.description {
+				padding: 0 10px;
+
+				.cardText {
+					padding-top: 30px;
+				}
+
+				.tags {
+					display: flex;
+					flex-wrap: wrap;
+
+					margin-top: 40px;
+
+					.tag {
+						margin: 4px 6px;
+						padding: 4px 12px;
+
+						text-align: center;
+
+						opacity: 0.95;
+						border: 2px solid $g-cyan-dark-color;
+						border-radius: 20px;
+					}
+				}
+			}
+
+			.companyLink {
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				padding: 10px;
+
+				cursor: default;
+
+				.companyIcon {
+					max-width: 100px;
+					max-height: 200px;
+
+					cursor: pointer;
+				}
+			}
+
+            @media #{$g-ui-mobile-small} {
+                flex-direction: row-reverse;
+                justify-content: start;
+                align-items: start;
+            }
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@import "../../../config";
+
+.greetings {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 100vh;
+}
+
+.description {
+	z-index: 1;
+}
+
+.title {
+	cursor: default;
+}
+
+.gray {
+	margin-top: 3rem;
+	letter-spacing: 0.4rem;
+	color: $g-gray-color;
+}
+
+.astronaut {
+	width: clamp(200px, 50vw, 500px);
+}
+
+@media #{$g-ui-mobile} {
+	.astronaut {
+		position: absolute;
+		right: 0;
+		bottom: 10%;
+	}
+}

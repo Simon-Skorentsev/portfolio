@@ -1,0 +1,66 @@
+@import "../../../config";
+
+.contactMe {
+	position: relative;
+}
+
+.description {
+	width: 40vw;
+}
+
+.svgPair {
+	display: flex;
+	gap: 10vw;
+
+	padding: 0 2vh 4vh 2vh;
+}
+
+.backWords {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 60vw;
+
+	opacity: 0.04;
+
+	color: $g-white-color;
+
+	font-family: coolvetica;
+	font-size: min(50vw, 480px);
+}
+
+.oneSvg {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.svgSpan {
+	position: absolute;
+	bottom: -1.2vh;
+
+	letter-spacing: 0.1rem;
+
+	color: $g-gray-color;
+}
+
+
+@media #{$g-ui-tablet} {
+	.svgPair {
+		gap: 66%;
+	}
+}
+
+@media #{$g-ui-mobile-small} {
+	.description {
+		width: 100%;
+		padding-right: 5rem;
+	}
+
+	.backWords {
+		left: 25%;
+		font-size: 90vw;
+	}
+}
