@@ -107,7 +107,7 @@
 			}
 
             @media #{$g-ui-mobile-small} {
-                flex-direction: row-reverse;
+                flex-direction: column-reverse;
                 justify-content: start;
                 align-items: start;
             }
