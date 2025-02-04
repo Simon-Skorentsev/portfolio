@@ -1,0 +1,14 @@
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+.astronaut {
+    width: rem-calc(500px);
+    overflow: visible;
+
+    cursor: pointer;
+
+    @include mobile {
+        align-self: flex-end;
+        width: rem-calc(250px);
+    }
+}
