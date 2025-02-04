@@ -71,9 +71,8 @@ export default function Contact() {
                             </a>
                             <div
                                 className={`${styles.link} ${styles['link--mail']}`}
-                                onClick={(event) => {
+                                onClick={() => {
                                     navigator.clipboard.writeText(mail);
-                                    console.log(event);
                                     setClipboardMessages((old) => [
                                         ...old,
                                         new Date().getTime(),

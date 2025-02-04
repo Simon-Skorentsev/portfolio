@@ -75,8 +75,8 @@ export function JobCard({
                 name="job"
                 onClick={onDetailsClick}
                 variants={variants}
-                animate={isOpen ? 'headOpen' : 'headClose'}
                 initial={isOpen ? 'headOpen' : 'headClose'}
+                animate={isOpen ? 'headOpen' : 'headClose'}
             >
                 <summary className={styles.summary}>
                     <div className={styles.title}>
@@ -115,8 +115,8 @@ export function JobCard({
             <motion.div
                 className={styles.content}
                 variants={variants}
-                animate={isOpen ? 'cardOpen' : 'cardClose'}
                 initial={isOpen ? 'cardOpen' : 'cardClose'}
+                animate={isOpen ? 'cardOpen' : 'cardClose'}
                 transition={{
                     duration: 0.44,
                     ease: 'easeInOut',

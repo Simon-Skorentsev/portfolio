@@ -86,10 +86,10 @@ export default function Char({
                 setWasHovered(true);
             }}
             whileHover={isAppeared ? 'hover' : undefined}
-            animate={isAppeared && wasHovered ? 'shake' : controls}
             variants={variants}
-            custom={currentQueue}
             initial={'initial'}
+            animate={isAppeared && wasHovered ? 'shake' : controls}
+            custom={currentQueue}
         >
             {children}
         </motion.span>

@@ -43,8 +43,8 @@ export default function MeetMe() {
                 </h1>
                 <motion.p
                     className={styles.profession}
-                    initial="professionInitial"
                     variants={variants}
+                    initial="professionInitial"
                     animate={isTitleAppeared ? 'professionFadeIn' : undefined}
                 >
                     {'<Front End Developer />'}
