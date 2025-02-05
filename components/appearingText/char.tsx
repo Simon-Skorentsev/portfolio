@@ -72,9 +72,7 @@ export default function Char({
             y: 0,
             rotate: 0,
             scale: 1,
-            color: !isWaitToAppear
-                ? makeRgbaColor(Colors.TEXT_PRIMARY)
-                : makeRgbaColor(Colors.TEXT_PRIMARY, 0),
+            color: makeRgbaColor(Colors.TEXT_PRIMARY, 0),
         },
     };
 
