@@ -2,19 +2,26 @@
 
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
-import { useState } from 'react';
+import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 
 import styles from './astronaut.module.scss';
-import hats from './hats';
+
+export type HatsNumber = typeof hatsNumber; // Нужно знать заранее кол-во шапок, но просто взять Arr.length не позволит сделать dynamic import
+const hatsNumber = 15 as const;
+const DynamicHats = dynamic(() => import('./hats'), {
+    ssr: false,
+});
 
 export default function Astronaut() {
     const [hatIndex, setHatIndex] = useState(0);
     const hatsControls = useAnimation();
+    const [isMounted, setIsMounted] = useState(false);
 
     const onClick = async () => {
         const oldHat = hatIndex;
 
-        if (oldHat % hats.length === 0) {
+        if (oldHat % hatsNumber === 0) {
             hatsControls.set({ opacity: 0 });
             setHatIndex(oldHat + 1);
             hatsControls.start({ opacity: 1 });
@@ -26,6 +33,10 @@ export default function Astronaut() {
         setHatIndex(oldHat + 1);
         await hatsControls.start({ opacity: 1 });
     };
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const variants: Variants = {
         astronaut: {
@@ -188,7 +199,9 @@ export default function Astronaut() {
                         animate={hatsControls}
                         initial={{ opacity: 0 }}
                     >
-                        {hats[hatIndex % hats.length]}
+                        {isMounted && (
+                            <DynamicHats index={hatIndex % hatsNumber} />
+                        )}
                     </motion.g>
                 </motion.g>
                 <motion.g variants={variants} animate="body">

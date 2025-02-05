@@ -3,13 +3,17 @@
 import { Canvas } from '@react-three/fiber';
 import type { Variants } from 'motion/react';
 import { motion, useInView } from 'motion/react';
+import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
 
 import { Colors } from '@/helpers/makeRgbaColor';
 
 import AppearingText from '../appearingText/appearingText';
-import Icosahedron from '../icosahedron/icosahedron';
 import styles from './skills.module.scss';
+
+const DynamicIcosahedron = dynamic(() => import('../icosahedron/icosahedron'), {
+    ssr: false,
+});
 
 const skillsList = [
     'TS',
@@ -90,7 +94,7 @@ export default function Skills() {
                     <ambientLight intensity={0.4} />
                     <fog attach="fog" args={[Colors.BG_PRIMARY, 3, 8.5]} />
                     {isTitleAppeared && (
-                        <Icosahedron textVertices={skillsList} />
+                        <DynamicIcosahedron textVertices={skillsList} />
                     )}
                 </Canvas>
             </motion.div>

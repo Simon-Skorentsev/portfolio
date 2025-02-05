@@ -1,4 +1,12 @@
-const hats = [
+'use client';
+
+import type { ReactElement } from 'react';
+
+import type { FixedArray } from '@/types/fixedArray';
+
+import type { HatsNumber } from './astronaut';
+
+const hats: FixedArray<ReactElement | null, HatsNumber> = [
     null,
     <svg
         id="crown"
@@ -1013,4 +1021,6 @@ S166.061,246.914,170.488,246.914z"
     </svg>,
 ];
 
-export default hats;
+export default function Hats({ index }: { index: number }) {
+    return hats[index];
+}
