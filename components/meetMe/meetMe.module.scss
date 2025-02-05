@@ -22,6 +22,10 @@
             margin-bottom: rem-calc(16px);
 
             cursor: default;
+
+            &--no-select {
+                user-select: none;
+            }
         }
 
         .profession {

@@ -2,13 +2,14 @@
 
 import type { Variants } from 'motion/react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import AppearingText from '../appearingText/appearingText';
 import Astronaut from '../astronaut/astronaut';
 import styles from './meetMe.module.scss';
 
 export default function MeetMe() {
+    const [isMounted, setIsMounted] = useState(false);
     const [isTitleAppeared, setIsTitleAppeared] = useState(false);
 
     const variants: Variants = {
@@ -25,10 +26,16 @@ export default function MeetMe() {
         },
     };
 
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     return (
         <section className={styles.meetMe}>
             <div className={styles.info}>
-                <h1 className={styles.title}>
+                <h1
+                    className={`${styles.title}${!isMounted ? ` ${styles['title--no-select']}` : ''}`}
+                >
                     <AppearingText
                         afterAppearedCb={() => {
                             setIsTitleAppeared(true);
