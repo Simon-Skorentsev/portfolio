@@ -34,6 +34,7 @@ export default function Skills() {
     const cameraPos = [0, 0, 5] as const;
 
     const [isTitleAppeared, setIsTitleAppeared] = useState(false);
+    const [isIcosahedronMounted, setIsIcosahedronMounted] = useState(false);
 
     const titleRef = useRef<HTMLHeadingElement>(null);
     const isTitleInView = useInView(titleRef, { amount: 'all', once: true });
@@ -85,7 +86,11 @@ export default function Skills() {
             <motion.div
                 className={styles.icosahedron}
                 variants={variants}
-                animate={isTitleAppeared ? 'mount' : undefined}
+                animate={
+                    isTitleAppeared && isIcosahedronMounted
+                        ? 'mount'
+                        : { opacity: 0 }
+                }
             >
                 <Canvas
                     gl={{ antialias: true, alpha: true }}
@@ -94,7 +99,10 @@ export default function Skills() {
                     <ambientLight intensity={0.4} />
                     <fog attach="fog" args={[Colors.BG_PRIMARY, 3, 8.5]} />
                     {isTitleAppeared && (
-                        <DynamicIcosahedron textVertices={skillsList} />
+                        <DynamicIcosahedron
+                            textVertices={skillsList}
+                            setIsIcosahedronMounted={setIsIcosahedronMounted}
+                        />
                     )}
                 </Canvas>
             </motion.div>

@@ -24,8 +24,10 @@ const vertices = [
 
 export default function Icosahedron({
     textVertices,
+    setIsIcosahedronMounted,
 }: {
     textVertices: readonly string[];
+    setIsIcosahedronMounted?: (value: boolean) => void;
 }) {
     const meshRef = useRef<Mesh>(null!);
     const dirLig = useRef<DirectionalLight>(null!);
@@ -40,6 +42,10 @@ export default function Icosahedron({
 
     useCursor(hovered, 'grab');
     useEffect(() => {
+        if (setIsIcosahedronMounted) {
+            setIsIcosahedronMounted(true);
+        }
+
         const handleResize = () => {
             setCanGrab(!getIsMobile());
         };
