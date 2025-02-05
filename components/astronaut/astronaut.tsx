@@ -39,7 +39,7 @@ export default function Astronaut() {
     }, []);
 
     const variants: Variants = {
-        astronaut: {
+        body: {
             rotate: ['0deg', '45deg'],
             y: ['0vh', '-1vh', '1vh'],
             x: ['0vw', '-.2vw', '.2vw'],
@@ -126,7 +126,7 @@ export default function Astronaut() {
                 repeatType: 'reverse',
             },
         },
-        body: {
+        chest: {
             scale: ['100%', '103.5%'],
             transition: {
                 duration: 1,
@@ -139,7 +139,7 @@ export default function Astronaut() {
 
     return (
         <svg
-            className={styles.astronaut}
+            className={`${styles.astronaut}${!isMounted ? ` ${styles['astronaut--hide']}` : ''}`}
             onClick={onClick}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
@@ -147,7 +147,7 @@ export default function Astronaut() {
             <motion.g
                 variants={variants}
                 initial={{ y: '0px', x: '0px' }}
-                animate="astronaut"
+                animate="body"
             >
                 <motion.g variants={variants} animate="tube">
                     <path
@@ -195,7 +195,6 @@ export default function Astronaut() {
                     />
                     <motion.g
                         transition={{ duration: 0.475 }}
-                        variants={variants}
                         animate={hatsControls}
                         initial={{ opacity: 0 }}
                     >
@@ -204,7 +203,7 @@ export default function Astronaut() {
                         )}
                     </motion.g>
                 </motion.g>
-                <motion.g variants={variants} animate="body">
+                <motion.g variants={variants} animate="chest">
                     <path
                         fill="#a95ed4"
                         d="M68.9 61.3c.2-1.5 1.3-2.8 2.8-3.1l19.2-4c1.1-.2 1.8-1.3 1.6-2.5l-1.9-8.6c-.2-1.1-1.3-1.8-2.5-1.6L67.6 46c-18.6-13.4-40.9.7-40.1 19 .8 21 38.6 25.8 41.4-3.7z"

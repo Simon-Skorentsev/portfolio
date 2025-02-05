@@ -7,6 +7,13 @@
 
     cursor: pointer;
 
+    /* TODO: Тк при переходе на next теперь SSR, то JS motion анимаци работают по мере загрузки JS, то есть не сразу, поэтому нужно
+    астронавта или спрятать и подождать (как сейчас) или переписать стили на css */
+    &--hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+
     @include mobile {
         align-self: flex-end;
         width: rem-calc(250px);
