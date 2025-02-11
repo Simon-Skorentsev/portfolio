@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         type: 'website',
         description: 'Front end developer portfolio site',
         locale: 'ru',
-        images: '/icons/icon-512.png',
+        images: '/images/openGraph.png',
     },
 };
 
