@@ -54,7 +54,7 @@ export default function MeetMe() {
                     initial="professionInitial"
                     animate={isTitleAppeared ? 'professionFadeIn' : undefined}
                 >
-                    {'<Front End Developer />'}
+                    {'<Frontend Developer />'}
                 </motion.p>
             </div>
             <Astronaut />

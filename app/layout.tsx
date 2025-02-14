@@ -7,7 +7,7 @@ import { coolveticaRg, pragmatica } from './fonts';
 
 export const metadata: Metadata = {
     title: "Simon's portfolio site",
-    description: 'Front end developer portfolio site',
+    description: 'Frontend developer portfolio site',
     icons: [
         {
             rel: 'icon',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Simon's portfolio site",
         type: 'website',
-        description: 'Front end developer portfolio site',
+        description: 'Frontend developer portfolio site',
         locale: 'ru',
         images: '/images/openGraph.png',
     },

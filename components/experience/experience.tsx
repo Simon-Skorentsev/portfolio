@@ -21,7 +21,7 @@ const jobs: Job[] = [
     {
         companyName: 'Prestoheads',
         imageSrc: '/images/prestoheads.svg',
-        jobTitle: 'Front end Dev',
+        jobTitle: 'Frontend Dev',
         tags: [
             'TypeScript',
             'Next',

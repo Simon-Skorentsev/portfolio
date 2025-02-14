@@ -69,7 +69,7 @@ export default function Skills() {
                     </AppearingText>
                 </h2>
                 <p className={styles.text}>
-                    Я&nbsp;занимаюсь Front end разработкой уже несколько лет
+                    Я&nbsp;занимаюсь Frontend разработкой уже несколько лет
                     и&nbsp;за&nbsp;это время поработал с&nbsp;множеством
                     технологий
                     <br />
