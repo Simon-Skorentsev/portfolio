@@ -117,10 +117,7 @@ export default function Contact() {
                                         </g>
                                     </g>
                                 </svg>
-                                <span
-                                    className={styles.contactData}
-                                    // TODO: И еще кста можешь ебануть разметку для меседжеров
-                                >
+                                <span className={styles.contactData}>
                                     {mail}
                                 </span>
                             </div>
@@ -167,7 +164,7 @@ export default function Contact() {
                             <a
                                 className={styles.link}
                                 target="_blank"
-                                href="https://drive.google.com/file/d/1rHei6_CTimgGHYfWpgkdHGxbQwXzU_U0/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1nJitPQGjMKmD3wCIUpNRPNe1dMTx3qLm/view?usp=sharing"
                             >
                                 <svg
                                     className={`${styles.icon} ${styles['icon--round']}`}

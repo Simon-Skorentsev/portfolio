@@ -123,29 +123,34 @@ export function JobCard({
                 }}
             >
                 <div className={styles.collapseWrapper}>
-                    <div className={styles.body}>
-                        <div className={styles.description}>
-                            <p className={styles.text}>{job.text}</p>
-                            <div className={styles.tags}>
-                                {job.tags.map((tag, i) => (
-                                    <div className={styles.tag} key={i}>
-                                        {tag}
-                                    </div>
-                                ))}
+                    {job.projects.map((project, projectIndex) => (
+                        <div key={projectIndex} className={styles.body}>
+                            <div className={styles.description}>
+                                <p className={styles.text}>{project.text}</p>
+                                <div className={styles.tags}>
+                                    {project.tags.map((tag, tagIndex) => (
+                                        <div
+                                            className={styles.tag}
+                                            key={tagIndex}
+                                        >
+                                            {tag}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+                            <a
+                                target="_blank"
+                                href={project.site}
+                                className={`${styles.logotype} ${styles[project.name]}`}
+                            >
+                                <Image
+                                    fill
+                                    src={project.imageSrc}
+                                    alt={`${project.name} project logotype`}
+                                />
+                            </a>
                         </div>
-                        <a
-                            target="_blank"
-                            href={job.site}
-                            className={`${styles.logotype} ${styles[job.companyName]}`}
-                        >
-                            <Image
-                                fill
-                                src={job.imageSrc}
-                                alt={`${job.companyName} company logotype`}
-                            />
-                        </a>
-                    </div>
+                    ))}
                 </div>
             </motion.div>
         </div>

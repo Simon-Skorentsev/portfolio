@@ -7,49 +7,73 @@ import AppearingText from '../appearingText/appearingText';
 import styles from './experience.module.scss';
 import { JobCard } from './jobCard';
 
-export interface Job {
+interface Project {
+    name: string;
     imageSrc: string;
-    companyName: string;
-    jobTitle: string;
     text: string;
     tags: string[];
-    timeWorked?: string;
-    site?: string;
+    site: string;
+}
+export interface Job {
+    companyName: string;
+    jobTitle: string;
+    timeWorked: string;
+    projects: Project[];
 }
 
 const jobs: Job[] = [
     {
         companyName: 'Prestoheads',
-        imageSrc: '/images/prestoheads.svg',
         jobTitle: 'Frontend Dev',
-        tags: [
-            'TypeScript',
-            'Next',
-            'React',
-            'Redux Toolkit',
-            'Nuxt',
-            'Vue',
-            'Pinia',
-            'Git',
-            'Docker',
-            'Foundation 6',
-            'SASS',
-            'Nest',
-        ],
-        // text: "Создание оверлеев для OBS, доработка старых и разработка новых UI компонентов",
-        // text: 'Создание отдельных страниц приложения, создание гибридного приложения, верстка таблиц, интеграция google analytics, интеграция sentry, интеграция retail rocket',
-        text: `Создал PWA приложение, подключил push notifications, gtag для аналитики Google и Yandex, онлайн оплату и другие сервисы\n\nСоздал редиректы и генерацию названий адресов, оптимизировал запросы на получение изображений из CDN, оптимизировал рендер карт`,
-        site: 'https://prestoheads.com/',
         timeWorked: '06.2023 - 08.2024',
+        projects: [
+            {
+                name: 'just-clothes',
+                imageSrc: '/images/just-clothes.svg',
+                site: 'https://justclothes.ru/',
+                tags: [
+                    'TypeScript',
+                    'Next',
+                    'Redux Toolkit',
+                    'Motion',
+                    'Foundation 6',
+                    'SASS',
+                    'Docker',
+                    'Cypress',
+                    'Mocha',
+                ],
+                text: `Создал PWA приложение, подключил push notifications, gtag для аналитики Google и\u00A0Yandex, онлайн оплату и\u00A0другие сервисы\n\nСоздал редиректы и\u00A0генерацию названий адресов, оптимизировал запросы на\u00A0получение изображений из\u00A0CDN, ускорил время загрузки страниц`,
+            },
+            {
+                name: 'vremena',
+                imageSrc: '/images/vremena.svg',
+                site: 'https://gastrovremena.ru/',
+                tags: [
+                    'TypeScript',
+                    'Nuxt',
+                    'Vue',
+                    'Pinia',
+                    'Zod',
+                    'Foundation 6',
+                    'SASS',
+                ],
+                text: `Создал систему компонентов, работал над улучшением\u00A0UX, создал схемы Zod`,
+            },
+        ],
     },
     {
         companyName: 'PyShop',
-        imageSrc: '/images/pyshop.png',
         jobTitle: 'Intern',
-        tags: ['TypeScript', 'Git', 'Gitlab CI/CD', 'Docker'],
-        text: 'Занимался разработкой telegram бота, также настроил Gitlab CI/CD, nginx',
-        site: 'https://pyshop.ru/',
         timeWorked: '01.2022 - 03.2022',
+        projects: [
+            {
+                name: 'PyShop',
+                imageSrc: '/images/pyshop.png',
+                site: 'https://pyshop.ru/',
+                tags: ['TypeScript', 'Docker', 'Git', 'Gitlab'],
+                text: 'Занимался разработкой telegram бота, также настроил Gitlab CI/CD, nginx',
+            },
+        ],
     },
 ] as const;
 
