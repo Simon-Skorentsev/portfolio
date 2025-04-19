@@ -1,0 +1,24 @@
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+.experience {
+    min-height: 100vh;
+    padding-top: rem-calc(60px);
+
+    .title {
+        margin-bottom: rem-calc(32px);
+    }
+
+    .jobList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: rem-calc(778px);
+        padding-left: rem-calc(10px);
+
+        @include mobile {
+            width: 100%;
+            padding-right: rem-calc(10px);
+        }
+    }
+}
