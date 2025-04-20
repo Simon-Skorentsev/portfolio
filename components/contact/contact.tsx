@@ -164,7 +164,7 @@ export default function Contact() {
                             <a
                                 className={styles.link}
                                 target="_blank"
-                                href="https://drive.google.com/file/d/1W7W5iJFs2pmeSkyLsnhAUzZiUzk6Ddg2/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1I8GWTX4lM06raLK8S2u4x_T_1xr4_Qd5/view?usp=sharing"
                             >
                                 <svg
                                     className={`${styles.icon} ${styles['icon--round']}`}
