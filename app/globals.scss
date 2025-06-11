@@ -1,0 +1,59 @@
+@use '@/styles/index' as *;
+@use '@/styles/mixins' as *;
+
+html {
+    font-size: 4.2666666667vw;
+}
+
+@media (min-width: 62.5em) and (max-width: 98.5em) {
+    html {
+      font-size: 1.0152284264vw;
+    }
+}
+
+@media (min-width: 98.5em) {
+    html {
+        font-size: $global-font-size;
+    }
+}
+
+body {
+    color: $text-primary;
+    font-family: Pragmatica, Arial, Helvetica, sans-serif;
+
+    background: $bg-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: rem-calc(102px);
+    font-family: coolveticaRg;
+    line-height: rem-calc(88px);
+    white-space: nowrap;
+
+    @include mobile {
+        font-size: rem-calc(51px);
+        line-height: rem-calc(44px);
+    }
+}
+
+h2 {
+    color: $text-secondary;
+    font-weight: 400;
+    font-size: rem-calc(72px);
+    font-family: coolveticaRg;
+    line-height: rem-calc(68px);
+    letter-spacing: rem-calc(0.02em);
+    white-space: nowrap;
+
+    @include mobile {
+        font-size: rem-calc(46px);
+        line-height: rem-calc(34px);
+    }
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}

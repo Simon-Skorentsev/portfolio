@@ -1,0 +1,14 @@
+@use '@/styles/vars' as *;
+@use '@/styles/functions' as *;
+
+.message {
+    position: absolute;
+
+    padding: rem-calc(8px 10px);
+
+    font-weight: 700;
+    font-size: rem-calc(12px);
+
+    background-color: $bg-accent;
+    border-radius: 20px;
+}
