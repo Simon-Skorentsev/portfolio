@@ -1,5 +1,2 @@
-## Описание
-Мой сайт-портфолио
-
 ## Live:
-- https://me-public-simon-skorentsev.vercel.app/
+- https://portfolio-simon-s.vercel.app/ Может не работать без __VPN__

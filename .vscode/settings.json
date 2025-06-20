@@ -1,0 +1,29 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
+"css.validate": false,
+  "scss.validate": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+  },
+  "files.autoSaveDelay": 500,
+  "files.eol": "\n",
+  "workbench.tree.indent": 20,
+  "explorer.autoReveal": false,
+  "cSpell.language": "en,ru",
+  "editor.wordWrap": "on",
+  "eslint.workingDirectories": [
+      "./",
+  ],
+  "cSpell.words": [
+    "coolvetica",
+    "pragmatica",
+    "Vremena"
+  ]
+}

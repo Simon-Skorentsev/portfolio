@@ -1,0 +1,46 @@
+@use '@/styles/vars' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+.meetMe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        .title {
+            position: relative;
+            z-index: 1;
+
+            margin-bottom: rem-calc(16px);
+
+            cursor: default;
+
+            &--no-select {
+                user-select: none;
+            }
+        }
+
+        .profession {
+            margin-left: rem-calc(10px);
+
+            color: $text-secondary;
+            font-weight: 500;
+            font-size: rem-calc(16px);
+            line-height: rem-calc(20px);
+            letter-spacing: rem-calc(0.18em);
+
+            @include mobile {
+                font-size: rem-calc(14px);
+                letter-spacing: rem-calc(0.09em);
+            }
+        }
+    }
+}
