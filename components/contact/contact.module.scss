@@ -1,0 +1,182 @@
+@use '@/styles/vars' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+@mixin icon-hover {
+    scale: 1.1;
+
+    box-shadow:
+        inset 0 0 20px rgb(255 255 255 / 20%),
+        0 0 20px rgb(255 255 255 / 30%);
+}
+
+.contact {
+    position: relative;
+
+    min-height: 100vh;
+    padding-top: rem-calc(60px);
+
+    .info {
+        max-width: rem-calc(700px);
+
+        .title {
+            margin-bottom: rem-calc(32px);
+        }
+
+        .body {
+            padding-left: rem-calc(10px);
+
+            @include mobile {
+                width: 100%;
+                padding-right: rem-calc(10px);
+            }
+
+            .text {
+                margin-bottom: rem-calc(24px);
+
+                font-weight: 400;
+                font-size: rem-calc(16px);
+                line-height: rem-calc(20px);
+
+                text-wrap: pretty;
+
+                @include mobile {
+                    font-size: rem-calc(14px);
+                }
+            }
+
+            .links {
+                display: flex;
+                gap: rem-calc(208px);
+                padding-inline: rem-calc(24px);
+
+                @include mobile {
+                    gap: 0;
+                    justify-content: space-between;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: rem-calc(48px);
+                }
+
+                .link {
+                    position: relative;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    &--mail,
+                    &--telegram {
+                        cursor: pointer;
+
+                        @include hover-mobile-adaptive {
+                            .icon {
+                                @include icon-hover;
+                            }
+
+                            .contactData {
+                                color: $text-primary;
+                            }
+                        }
+                    }
+
+                    .icon {
+                        width: rem-calc(80px);
+                        height: rem-calc(80px);
+
+                        box-shadow:
+                            inset 0 0 20px rgb(29 29 29 / 20%),
+                            0 0 20px rgb(29 29 29 / 30%);
+                        cursor: pointer;
+
+                        transition: all 0.2s ease-in-out;
+
+                        @include hover-mobile-adaptive {
+                            &:not(.icon--mail, .icon--telegram) {
+                                @include icon-hover;
+                            }
+                        }
+
+                        &--round {
+                            border-radius: 50%;
+                        }
+
+                        > g {
+                            mix-blend-mode: normal;
+                        }
+                    }
+
+                    .contactData {
+                        position: absolute;
+                        bottom: rem-calc(-24px);
+
+                        color: $text-secondary;
+                        font-weight: 500;
+
+                        font-size: rem-calc(14px);
+                        line-height: rem-calc(16px);
+                        letter-spacing: rem-calc(0.02em);
+
+                        transition: all 0.2s;
+
+                        @include mobile {
+                            font-size: rem-calc(12px);
+                        }
+                    }
+
+                    .message {
+                        position: absolute;
+                        top: rem-calc(-8px);
+                        z-index: 1;
+
+                        justify-self: center;
+                        padding: rem-calc(8px 10px);
+
+                        font-weight: 700;
+                        font-size: rem-calc(12px);
+
+                        background-color: $bg-accent;
+                        border-radius: 20px;
+
+                        animation: fading-out 1s 1 ease-out forwards;
+
+                        @keyframes fading-out {
+                            from {
+                                background-color: $bg-accent;
+                                transform: translateY(0);
+                                opacity: 1;
+                            }
+
+                            to {
+                                background-color: $bg-accent-dark;
+                                transform: translateY(-50px);
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .backWords {
+        position: absolute;
+        top: 0;
+        left: 60vw;
+        z-index: -1;
+
+        color: $text-primary;
+        font-size: rem-calc(480px);
+
+        font-family: coolveticaRg;
+
+        opacity: 0.04;
+
+        @include mobile {
+            top: 5vh;
+            left: 50%;
+            translate: -50%;
+        }
+    }
+}

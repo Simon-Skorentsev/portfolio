@@ -1,0 +1,17 @@
+@use '@/styles/vars' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+$page-inline-padding: 80px;
+
+.page {
+    padding-inline: rem-calc($page-inline-padding);
+
+    @include mobile {
+        padding-inline: rem-calc(16px);
+    }
+}
+
+.char {
+    display: inline-block;
+}

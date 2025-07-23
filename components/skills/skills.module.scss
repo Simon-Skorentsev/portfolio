@@ -1,0 +1,63 @@
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+@use '@/app/page.module.scss';
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-top: rem-calc(60px);
+    overflow: visible;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info {
+        flex-grow: 1;
+        flex-shrink: 0;
+        width: calc(40vw - #{rem-calc(page.$page-inline-padding)});
+        max-width: rem-calc(778px);
+
+        @include mobile {
+            width: initial;
+            max-width: initial;
+        }
+
+        .title {
+            margin-bottom: rem-calc(32px);
+        }
+
+        .text {
+            padding-left: rem-calc(10px);
+
+            font-weight: 400;
+            font-size: rem-calc(16px);
+            line-height: rem-calc(20px);
+            text-wrap: pretty;
+
+            @include mobile {
+                padding-right: rem-calc(10px);
+
+                font-size: rem-calc(14px);
+            }
+        }
+    }
+
+    .icosahedron {
+        position: relative;
+        bottom: 8vw;
+
+        width: calc(60vw - #{rem-calc(page.$page-inline-padding)});
+        max-width: rem-calc(1132px);
+        height: min(60vw, 100vh);
+        max-height: rem-calc(1167px);
+
+        @include mobile {
+            width: 100vw;
+            height: 100vw;
+        }
+    }
+}

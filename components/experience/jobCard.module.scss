@@ -1,0 +1,170 @@
+@use '@/styles/vars' as *;
+@use '@/styles/functions' as *;
+@use '@/styles/mixins' as *;
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .details {
+        border-radius: 6px;
+        cursor: pointer;
+
+        .summary {
+            display: flex;
+            gap: rem-calc(32px);
+            align-items: center;
+            justify-content: space-between;
+            padding: rem-calc(16px 20px);
+
+            .title {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
+
+                @include mobile {
+                    flex-direction: column;
+                }
+
+                .name,
+                .time {
+                    font-weight: 400;
+                    font-size: rem-calc(24px);
+                    font-family: coolveticarg;
+                    line-height: rem-calc(36px);
+                    letter-spacing: rem-calc(0.06em);
+
+                    @include mobile {
+                        font-size: rem-calc(18px);
+                        line-height: rem-calc(27px);
+                        letter-spacing: rem-calc(0.02em);
+
+                        &:is(.time) {
+                            font-size: rem-calc(12px);
+                            font-family: Pragmatica;
+                            line-height: rem-calc(21px);
+                        }
+                    }
+                }
+            }
+
+            .timeWorked {
+                margin-left: auto;
+            }
+
+            .marker {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: rem-calc(14px);
+                    height: rem-calc(12px);
+                    overflow: visible;
+                }
+            }
+        }
+    }
+
+    .content {
+        .collapseWrapper {
+            display: flex;
+            flex-direction: column;
+
+            .body {
+                display: flex;
+                gap: rem-calc(20px);
+                justify-content: space-between;
+                width: 100%;
+                margin: rem-calc(16px);
+                padding: rem-calc(16px 24px);
+
+                background-color: #2c1d5c;
+
+                border-radius: 6px;
+
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+
+                @include mobile {
+                    flex-direction: column-reverse;
+                    gap: rem-calc(12px);
+                    align-items: center;
+                }
+
+                .description {
+                    padding-block: rem-calc(12px);
+
+                    @include mobile {
+                        padding-block: 0;
+                    }
+
+                    .text {
+                        margin-bottom: rem-calc(24px);
+
+                        font-weight: 400;
+                        font-size: rem-calc(16px);
+                        line-height: rem-calc(20px);
+                        white-space: pre-line;
+                        text-wrap: pretty;
+
+                        @include mobile {
+                            margin-bottom: rem-calc(12px);
+
+                            font-size: rem-calc(14px);
+                        }
+                    }
+
+                    .tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: rem-calc(8px);
+
+                        font-weight: 400;
+
+                        font-size: rem-calc(14px);
+                        line-height: rem-calc(16px);
+                        letter-spacing: rem-calc(0.02em);
+                        text-wrap: pretty;
+
+                        @include mobile {
+                            font-size: rem-calc(12px);
+                        }
+
+                        .tag {
+                            padding: rem-calc(5px 10px);
+
+                            text-align: center;
+
+                            border: 2px solid rgba($text-accent, 0.8);
+                            border-radius: 20px;
+
+                            opacity: 0.95;
+                        }
+                    }
+                }
+
+                .logotype {
+                    position: relative;
+
+                    width: fit-content;
+                    height: rem-calc(80px);
+                    aspect-ratio: 1/1;
+
+                    @include mobile {
+                        height: rem-calc(75px);
+                    }
+                }
+
+                .just-clothes {
+                    > img {
+                        background-color: #fff;
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
